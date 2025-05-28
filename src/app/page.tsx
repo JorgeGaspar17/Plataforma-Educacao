@@ -5,7 +5,9 @@ import Header from "@/components/Header/Header";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { JSX } from "@fullcalendar/core/preact.js";
-
+import Link from "next/link";
+import Singnup from "@/app/singnup/page";
+import Login from "@/app/login/page";
 
 // Componente de loading genérico
 const LoadingSkeleton = ({ height = "h-64" }: { height?: string }) => (
@@ -80,6 +82,7 @@ export default function Home(): JSX.Element {
       {/* <Chamada />
       <CalendarioAgendamento />
       <ChatSection /> */}
+
       <Head>
         <title>Educonect - Plataforma de Educação</title>
         <meta
@@ -112,20 +115,18 @@ export default function Home(): JSX.Element {
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
               Aprenda de forma <span className="text-blue-600">simples</span>,{" "}
-              <span>prática</span> e{" "}
-              <span>eficiente</span>
+              <span>prática</span> e <span>eficiente</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Cresça na carreira, prepare-se para provas ou aprenda algo novo
               com os melhores mentores e recursos do mercado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#comunidade"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Começar Agora
-              </a>
+              <Link href="/singnup">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105 shadow-lg">
+                  Começar Agora
+                </button>
+              </Link>
               <a
                 href="#sobre"
                 className="bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105"
