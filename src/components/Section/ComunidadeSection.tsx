@@ -118,7 +118,7 @@ export default function ComunidadeSection() {
       title: "Workshop: Carreira em TI",
       date: "2023-11-25",
       time: "15:00",
-      mentor: "Dra. Maria Souza",
+      mentor: "Dra. Maria Matias",
       category: "Programação",
     },
     {
@@ -126,7 +126,7 @@ export default function ComunidadeSection() {
       title: "Seminário: História do Brasil",
       date: "2023-12-01",
       time: "10:00",
-      mentor: "Prof. Carlos Lima",
+      mentor: "Prof. Jorge Gaspar",
       category: "História",
     },
   ];
