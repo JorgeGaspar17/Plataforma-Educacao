@@ -1,96 +1,171 @@
-"use client";
-
-import { useState } from 'react';
-import Link from 'next/link';
+// src/components/Header.tsx
+import Link from "next/link";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 z-50 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-1">
-              <span className="text-2xl font-extrabold text-blue-600 leading-none">Edu</span>
-              <span className="text-2xl font-bold text-gray-800 leading-none">conect</span>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6 items-center">
-            <Link href="/" className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150">
-              Home
-            </Link>
-            <Link href="/sobre" className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150">
-              Sobre
-            </Link>
-            <Link href="/comunidade" className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150">
-              Comunidade
-            </Link>
-            <Link href="/agenda" className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150">
-              Agenda
-            </Link>
-            <Link href="/contacto" className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150">
-              Contacto
-            </Link>
-            <button className="ml-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-medium text-sm transition duration-300">
-              Login
-            </button>
-          </nav>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none"
-              aria-label="Abrir menu principal"
-            >
-              <span className="sr-only">Abrir menu</span>
-              <div className="w-6 h-6 relative">
-                <span className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 top-2.5' : 'top-1'}`}></span>
-                <span className={`block absolute h-0.5 w-6 bg-current transition-opacity duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100 top-3'}`}></span>
-                <span className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 top-2.5' : 'top-5'}`}></span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="px-4 pt-4 pb-6 space-y-2 bg-white shadow-lg">
-          <Link href="/" className="block text-gray-700 hover:text-blue-600 text-base font-medium">
-            Home
-          </Link>
-          <Link href="/sobre" className="block text-gray-700 hover:text-blue-600 text-base font-medium">
-            Sobre
-          </Link>
-          <Link href="/comunidade" className="block text-gray-700 hover:text-blue-600 text-base font-medium">
-            Comunidade
-          </Link>
-          <Link href="/agenda" className="block text-gray-700 hover:text-blue-600 text-base font-medium">
-            Agenda
-          </Link>
-          <Link href="/contacto" className="block text-gray-700 hover:text-blue-600 text-base font-medium">
-            Contacto
-          </Link>
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 mt-3 rounded-md font-medium transition duration-300">
-            Login
-          </button>
-        </div>
-      </div>
+    <header className="flex justify-between px-6 py-4 shadow">
+      <h1 className="text-xl font-bold text-blue-600">Edu <span className="text-black">conect</span></h1>
+      <nav className="space-x-4">
+        <Link href="/">Home</Link>
+        <Link href="#sobre">Sobre</Link>
+        <Link href="#comunidade">Comunidade</Link>
+        <Link href="#agenda">Agenda</Link>
+        <Link href="#contato">Contato</Link>
+        <Link href="/login">
+          <button className="bg-blue-600 text-white px-4 py-1 rounded">Login</button>
+        </Link>
+      </nav>
     </header>
   );
 }
 
 
 
+
+
+
+
+// "use client";
+
+// import { useState } from "react";
+// import Link from "next/link";
+
+// export default function Header() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   const toggleMenu = () => {
+//     setIsMenuOpen(!isMenuOpen);
+//   };
+
+//   return (
+//     <header className="bg-white shadow-md fixed w-full top-0 z-50 font-sans">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="flex justify-between items-center h-20">
+//           {/* Logo */}
+//           <div className="flex-shrink-0 flex items-center">
+//             <Link href="/" className="flex items-center gap-1">
+//               <span className="text-2xl font-extrabold text-blue-600 leading-none">
+//                 Edu
+//               </span>
+//               <span className="text-2xl font-bold text-gray-800 leading-none">
+//                 conect
+//               </span>
+//             </Link>
+//           </div>
+
+//           {/* Desktop Navigation */}
+//           <nav className="hidden md:flex space-x-6 items-center">
+//             <Link
+//               href="/"
+//               className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150"
+//             >
+//               Home
+//             </Link>
+//             <Link
+//               href="/Section/sobre"
+//               className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150"
+//             >
+//               Sobre
+//             </Link>
+//             <Link href="/ComunidadeSection"
+//               className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150"
+//             >
+//               Comunidade
+//             </Link>
+//             <Link
+//               href="/Section/CalendarioAgendamento"
+//               className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150"
+//             >
+//               Agenda
+//             </Link>
+//             <Link
+//               href="/Section/contacto"
+//               className="text-gray-700 hover:text-blue-600 text-sm font-medium transition duration-150"
+//             >
+//               Contacto
+//             </Link>
+//             <Link href="/register">
+//               <button className="ml-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-medium text-sm transition duration-300">
+//                 Registrar-se Agora
+//               </button>
+//             </Link>
+//           </nav>
+
+//           {/* Mobile menu button */}
+//           <div className="md:hidden flex items-center">
+//             <button
+//               onClick={toggleMenu}
+//               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none"
+//               aria-label="Abrir menu principal"
+//             >
+//               <span className="sr-only">Abrir menu</span>
+//               <div className="w-6 h-6 relative">
+//                 <span
+//                   className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
+//                     isMenuOpen ? "rotate-45 top-2.5" : "top-1"
+//                   }`}
+//                 ></span>
+//                 <span
+//                   className={`block absolute h-0.5 w-6 bg-current transition-opacity duration-300 ease-in-out ${
+//                     isMenuOpen ? "opacity-0" : "opacity-100 top-3"
+//                   }`}
+//                 ></span>
+//                 <span
+//                   className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
+//                     isMenuOpen ? "-rotate-45 top-2.5" : "top-5"
+//                   }`}
+//                 ></span>
+//               </div>
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mobile Navigation */}
+//       <div
+//         className={`md:hidden transition-all duration-300 ease-in-out ${
+//           isMenuOpen ? "block" : "hidden"
+//         }`}
+//       >
+//         <div className="px-4 pt-4 pb-6 space-y-2 bg-white shadow-lg">
+//           <Link
+//             href="/"
+//             className="block text-gray-700 hover:text-blue-600 text-base font-medium"
+//           >
+//             Home
+//           </Link>
+//           <Link
+//             href="/Section/sobre"
+//             className="block text-gray-700 hover:text-blue-600 text-base font-medium"
+//           >
+//             Sobre
+//           </Link>
+//           <Link
+//             href="/Section/ComunidadeSection"
+//             className="block text-gray-700 hover:text-blue-600 text-base font-medium"
+//           >
+//             Comunidade
+//           </Link>
+//           <Link
+//             href="/Section/CalendarioAgendamento"
+//             className="block text-gray-700 hover:text-blue-600 text-base font-medium"
+//           >
+//             Agenda
+//           </Link>
+//           <Link
+//             href="/Section/contacto"
+//             className="block text-gray-700 hover:text-blue-600 text-base font-medium"
+//           >
+//             Contacto
+//           </Link>
+//           <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 mt-3 rounded-md font-medium transition duration-300">
+//             Registrar-se Agora
+//           </button>
+//         </div>
+//       </div>
+//     </header>
+//   );
+// }
 
 // "use client";
 

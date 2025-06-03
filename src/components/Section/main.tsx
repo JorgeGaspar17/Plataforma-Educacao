@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { auth } from "@/lib/firebaseConfig";
+
 
 export default function Main() {
   return (

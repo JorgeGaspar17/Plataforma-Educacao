@@ -6,8 +6,7 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { JSX } from "@fullcalendar/core/preact.js";
 import Link from "next/link";
-import Singnup from "@/app/singnup/page";
-import Login from "@/app/login/page";
+import { auth } from "@/lib/firebaseConfig";
 
 // Componente de loading genérico
 const LoadingSkeleton = ({ height = "h-64" }: { height?: string }) => (
@@ -122,17 +121,14 @@ export default function Home(): JSX.Element {
               com os melhores mentores e recursos do mercado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/singnup">
+              <Link href="/register">
                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105 shadow-lg">
                   Começar Agora
                 </button>
               </Link>
-              <a
-                href="#sobre"
-                className="bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105"
-              >
-                Saber Mais
-              </a>
+              <Link href="/sobre">
+                <button className="bg-white border  inline-block  hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 text-black hover:text-white px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105 shadow-lg">Saber Mais</button>
+              </Link>
             </div>
           </div>
         </section>
@@ -170,9 +166,9 @@ export default function Home(): JSX.Element {
         </Suspense>
 
         {/* Painel de usuário dinâmico - troque lógica por autenticação real depois */}
-        <Suspense fallback={<LoadingSkeleton height="1000px" />}>
+         <Suspense fallback={<LoadingSkeleton height="1000px" />}>
           <PainelUsuario userType={userType} />
-        </Suspense>
+        </Suspense> 
       </main>
     </>
   );
